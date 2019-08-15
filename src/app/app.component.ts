@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DatosService} from './datos.service'
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,15 @@ export class AppComponent {
   age:number=28;
   
   users:string[]=["Wilo","Miguel","Camila"];
+  posts=[];
 
   decirHola(){
     alert("Que se dice");
+  }
+  constructor(private datosService:DatosService){
+    this.datosService.obtenerDatos().subscribe(data=>{
+      this.posts=data;
+    });
   }
   agregarUsuario(nombreUsuario){
     this.users.push(nombreUsuario.value);
@@ -29,5 +36,6 @@ export class AppComponent {
       }
     }
   }
+  
   
 }
