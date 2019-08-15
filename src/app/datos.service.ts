@@ -19,6 +19,9 @@ export class DatosService {
     funcionando */
     console.log("El servicio funciona");
   }
+  /*Este metodo retorna un arreglo tipo POST con 
+  todo lo que trae de os objetos tipos json que hay en esa 
+  pagina de prueba */
   obtenerDatos(){
     return this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
