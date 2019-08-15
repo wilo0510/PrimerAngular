@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'primerNode';
+  users=['yo','Miguel','Puto el que lo lea','No mentiras']
+  activado=true;
 }
